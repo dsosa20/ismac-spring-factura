@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://wWW.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.1.xsd
+">
+ 	
+ 	<context:component-scan base-package="com.distribuida"></context:component-scan>
+ 	<context:property-placeholder location="classpath:datosEmpresa.properties"/>
+ 	
+ 	
+ 	    <bean id="idClientes" class="com,distribuida.entities.Clientes"></bean>
+ 
+  	    <bean id="idClientes2" class="com,distribuida.entities.Clientes"></bean>
+ 	    
+ 	    <bean id="idProductos" class="com,distribuida.entities.Produstos"></bean>
+ 	    
+ 	    <bean id="idProductos2" class="com,distribuida.entities.Produstos"></bean>
+ 	    
+ 	    <bean id="idProductos3" class="com,distribuida.entities.Produstos"></bean>
+ 	    
+ 	    
+ 	    <bean id="idFacturas" class="com,distribuida.entities.Facturas">
+ 	    <constructor-arg ref="idClientes"></constructor-arg>
+ 	    </bean>
+ 	    
+ 	    <bean id="idFacturas" class="com,distribuida.entities.Facturas">
+ 	    <property name="producto" ref="idProductos"></property>
+ 	    </bean>
+ 	    
+ 	    <bean id="idDetalleFcatura" class="com,distribuida.entities.DetalleFactura">
+ 	    <property name="producto" ref="idProductos"></property>
+ 	    </bean>
+ 	    
+ 	    <bean id="idDetalleFcatura2" class="com,distribuida.entities.DetalleFactura2">
+ 	    <property name="producto" ref="idProductos"></property>
+ 	    </bean>
+ 	    
+ 	    <bean id="idDetalleFcatura3" class="com,distribuida.entities.DetalleFactura3">
+ 	    <property name="producto" ref="idProductos"></property>
+ 	    </bean>
+</beans>
+
+
