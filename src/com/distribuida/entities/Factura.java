@@ -1,6 +1,6 @@
 package com.distribuida.entities;
 
-public class Facturas {
+public class Factura {
 
 	//Atributos
 	private int id_factura;
@@ -8,7 +8,13 @@ public class Facturas {
 	private double totalneto;
 	private float iva;
 	private double total;
-	private Clientes cliente;
+	private Cliente cliente;
+	
+	public Factura () {}
+	
+	public Factura (Cliente cliente) {
+	this.cliente = cliente;
+	}
 	
 	//Metodos_Getter and Setter
 	public int getId_factura() {
@@ -32,8 +38,8 @@ public class Facturas {
 	public float getIva() {
 		return iva;
 	}
-	public void setIva(float iva) {
-		this.iva = iva;
+	public void setIva(double Iva) {
+		this.iva = (float) Iva;
 	}
 	public double getTotal() {
 		return total;
@@ -41,10 +47,10 @@ public class Facturas {
 	public void setTotal(double total) {
 		this.total = total;
 	}
-	public Clientes getCliente() {
+	public Cliente getCliente() {
 		return cliente;
 	}
-	public void setCliente(Clientes cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 	

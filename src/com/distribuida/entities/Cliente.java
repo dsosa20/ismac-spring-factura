@@ -1,6 +1,6 @@
 package com.distribuida.entities;
 
-public class Clientes {
+public class Cliente {
 
 	//Atributos
 	private int id_cliente;
@@ -10,7 +10,10 @@ public class Clientes {
 	private String direccion;
 	private int telefono;
 	private String correo;
-	private Clientes cliente;
+	private Cliente cliente;
+	
+	public Cliente () {}
+	
 	
 	//Metodos Getter and Setter
 	public int getId_cliente() {
@@ -55,10 +58,10 @@ public class Clientes {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	public Clientes getCliente() {
+	public Cliente getCliente() {
 		return cliente;
 	}
-	public void setCliente(Clientes cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 	

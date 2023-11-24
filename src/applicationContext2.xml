@@ -12,12 +12,17 @@
         <context:component-scan base-package="com.distribuida"></context:component-scan>
  <!--  	<context:property-placeholder location="classpath:datosEmpresa.properties"/>
  --> 	
- 	
+        <bean id="idDatosEmpresa" class="com.distribuida.entities.DatosEmpresa">
+         <property name="empresa" value="ABC.SA"></property>
+         <property name="direccion" value="Por algun lado"></property>
+         <property name="telefono" value="05046255225"></property>
+         <property name="correo" value="abc@gmail.com"></property>             
+        </bean>
+         
  	    <bean id="idCliente" class="com.distribuida.entities.Cliente"></bean>
  
  	    
  	    <bean id="idProducto" class="com.distribuida.entities.Producto"></bean>
- 	    
  	    
  	    <bean id="idFactura" class="com.distribuida.entities.Factura">
  	    <property name="cliente" ref="idCliente"></property>
@@ -28,3 +33,4 @@
  	    </bean>
  	    
 </beans>
+

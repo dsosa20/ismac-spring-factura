@@ -9,15 +9,19 @@
 		http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
  	
-        <context:component-scan base-package="com.distribuida"></context:component-scan>
- <!--  	<context:property-placeholder location="classpath:datosEmpresa.properties"/>
- --> 	
- 	
+<!--         <context:component-scan base-package="com.distribuida"></context:component-scan>
+ -->     	<context:property-placeholder location="classpath:datosEmpresa.properties"/>
+     	 	
+        <bean id="idDatosEmpresa" class="com.distribuida.entities.DatosEmpresa">
+         <property name="empresa" value="${empresa}"></property>
+         <property name="direccion" value="${direccion}"></property>
+         <property name="telefono" value="${telefono}"></property>
+         <property name="correo" value="${correo}"></property>             
+        </bean>
+         
  	    <bean id="idCliente" class="com.distribuida.entities.Cliente"></bean>
- 
  	    
  	    <bean id="idProducto" class="com.distribuida.entities.Producto"></bean>
- 	    
  	    
  	    <bean id="idFactura" class="com.distribuida.entities.Factura">
  	    <property name="cliente" ref="idCliente"></property>
@@ -28,3 +32,4 @@
  	    </bean>
  	    
 </beans>
+

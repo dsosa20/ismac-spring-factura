@@ -9,40 +9,22 @@
 		http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
  	
- 	<context:component-scan base-package="com.distribuida"></context:component-scan>
- 	<context:property-placeholder location="classpath:datosEmpresa.properties"/>
+        <context:component-scan base-package="com.distribuida"></context:component-scan>
+ <!--  	<context:property-placeholder location="classpath:datosEmpresa.properties"/>
+ --> 	
  	
- 	
- 	    <bean id="idClientes" class="com,distribuida.entities.Clientes"></bean>
+ 	    <bean id="idCliente" class="com.distribuida.entities.Cliente"></bean>
  
-  	    <bean id="idClientes2" class="com,distribuida.entities.Clientes"></bean>
  	    
- 	    <bean id="idProductos" class="com,distribuida.entities.Produstos"></bean>
- 	    
- 	    <bean id="idProductos2" class="com,distribuida.entities.Produstos"></bean>
- 	    
- 	    <bean id="idProductos3" class="com,distribuida.entities.Produstos"></bean>
+ 	    <bean id="idProducto" class="com.distribuida.entities.Producto"></bean>
  	    
  	    
- 	    <bean id="idFacturas" class="com,distribuida.entities.Facturas">
- 	    <constructor-arg ref="idClientes"></constructor-arg>
+ 	    <bean id="idFactura" class="com.distribuida.entities.Factura">
+ 	    <property name="cliente" ref="idCliente"></property>
  	    </bean>
  	    
- 	    <bean id="idFacturas" class="com,distribuida.entities.Facturas">
- 	    <property name="producto" ref="idProductos"></property>
+ 	    <bean id="idDetalleFactura" class="com.distribuida.entities.DetalleFactura">
+ 	    <property name="producto" ref="idProducto"></property>
  	    </bean>
  	    
- 	    <bean id="idDetalleFcatura" class="com,distribuida.entities.DetalleFactura">
- 	    <property name="producto" ref="idProductos"></property>
- 	    </bean>
- 	    
- 	    <bean id="idDetalleFcatura2" class="com,distribuida.entities.DetalleFactura2">
- 	    <property name="producto" ref="idProductos"></property>
- 	    </bean>
- 	    
- 	    <bean id="idDetalleFcatura3" class="com,distribuida.entities.DetalleFactura3">
- 	    <property name="producto" ref="idProductos"></property>
- 	    </bean>
 </beans>
-
-
